@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.solinftec.desafiosantander_rafaelpimenta.view.fragment.LoginFragment"
+        android:label="login_fragment"
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_statementsFragment"
+            app:destination="@id/statementsFragment" />
+        <argument
+            android:name="user"
+            app:argType="com.solinftec.desafiosantander_rafaelpimenta.model.UserAccount" />
+    </fragment>
+    <fragment
+        android:id="@+id/statementsFragment"
+        android:name="com.solinftec.desafiosantander_rafaelpimenta.view.fragment.StatementsFragment"
+        android:label="statements_fragment"
+        tools:layout="@layout/statements_fragment" >
+        <action
+            android:id="@+id/action_statementsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+</navigation>
